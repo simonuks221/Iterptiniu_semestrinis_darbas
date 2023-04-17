@@ -1,0 +1,2 @@
+# Įterptinių semestrinis darbas
+ 

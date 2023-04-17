@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net" modified="2023-04-04T17:47:43.337Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0" etag="hegk34sbxnmaeu_3C6pA" version="21.1.4" type="device">
+  <diagram name="Page-1" id="73IzyarpysrCiVB1yLuo">
+    <mxGraphModel dx="2079" dy="505" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-1" target="TTbMhpJqwPKgY1I4AlqR-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-1" value="Pradžia" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-2" target="TTbMhpJqwPKgY1I4AlqR-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-2" value="Sukonfigūruojame sensorių ir OLED ekraną per I2C sąsają" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-3" target="TTbMhpJqwPKgY1I4AlqR-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-3" value="Įjungiame diskretizavimo laikmatį TIM3" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-4" target="TTbMhpJqwPKgY1I4AlqR-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-4" value="Perskaitome konfigūracijos duomenis iš vidinės FLASH atminties" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-8" target="TTbMhpJqwPKgY1I4AlqR-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-8" target="TTbMhpJqwPKgY1I4AlqR-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-8" value="Miego režimas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-10" target="TTbMhpJqwPKgY1I4AlqR-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-10" value="Nuskaitome sensoriaus magnetometro bei akselerometro rodmenis" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="480" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-12" value="Gauta TIM3 pertrauktis" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="430" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-13" value="UART nuskaitymas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-150" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-15" value="Gauta UART4 pertrauktis" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="350" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-16" target="TTbMhpJqwPKgY1I4AlqR-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-16" value="Nuskaitymu skaicius ++" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-18" target="TTbMhpJqwPKgY1I4AlqR-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="690" />
+              <mxPoint x="200" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-18" target="TTbMhpJqwPKgY1I4AlqR-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-18" value="Nuskaitymu skaicius = 5" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="650" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-23" value="Ne" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="660" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-24" target="TTbMhpJqwPKgY1I4AlqR-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-24" value="Vidurkiname nuskaitytas reikšmes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-26" target="TTbMhpJqwPKgY1I4AlqR-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-26" value="Apskaičiuojame atkompensuotą kompaso kampą" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="840" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TTbMhpJqwPKgY1I4AlqR-27" target="TTbMhpJqwPKgY1I4AlqR-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-27" value="Atnaujiname OLED ekrano rodmenis ir siunčiame informaciją į PC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-30" value="Išsiunčiame kalibracijos duomenis į PC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TTbMhpJqwPKgY1I4AlqR-32" value="Gauta UART TX pabaigos pertrauktis" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="900" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

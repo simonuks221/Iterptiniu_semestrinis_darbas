@@ -1,0 +1,19 @@
+Dependencies for Project 'Laboratorinis1', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6180000::V6.18::ARMCLANG
+F (.\main.c)(0x64351ED5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/simon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/simon/AppData/Local/Arm/Packs/Keil/STM32L0xx_DFP/2.2.0/Drivers/CMSIS/Device/ST/STM32L0xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32L053xx -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/main.o -MD)
+I (RTE\_Target_1\Pre_Include_Global.h)(0x6434F36B)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6252A726)
+I (C:\Keil_v5\ARM\ARMCLANG\include\math.h)(0x6252A726)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252A728)
+F (RTE/Device/STM32L053C6Tx/startup_stm32l053xx.s)(0x6317A2D3)(--target=arm-arm-none-eabi -mcpu=cortex-m0plus -masm=auto -c-gdwarf-4-I./RTE/_Target_1-IC:/Users/simon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/simon/AppData/Local/Arm/Packs/Keil/STM32L0xx_DFP/2.2.0/Drivers/CMSIS/Device/ST/STM32L0xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 537" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32L053xx SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32l053xx.o)
+F (RTE/Device/STM32L053C6Tx/system_stm32l0xx.c)(0x631F86B8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/simon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/simon/AppData/Local/Arm/Packs/Keil/STM32L0xx_DFP/2.2.0/Drivers/CMSIS/Device/ST/STM32L0xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32L053xx -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/system_stm32l0xx.o -MD)
+I (RTE\_Target_1\Pre_Include_Global.h)(0x6434F36B)
+I (C:\Users\simon\AppData\Local\Arm\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include\stm32l0xx.h)(0x60FEBFD6)
+I (C:\Users\simon\AppData\Local\Arm\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include\stm32l053xx.h)(0x60FEBFD6)
+I (C:\Users\simon\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252A728)
+I (C:\Users\simon\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\simon\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\simon\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F912E)
+I (C:\Users\simon\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F912E)
+I (C:\Users\simon\AppData\Local\Arm\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h)(0x5FA15FA8)

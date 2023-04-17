@@ -1,0 +1,11 @@
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\bin\Debug\PCKodas.exe.config
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\bin\Debug\PCKodas.exe
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\bin\Debug\PCKodas.pdb
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\obj\Debug\PCKodas.csproj.AssemblyReference.cache
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\obj\Debug\PCKodas.csproj.SuggestedBindingRedirects.cache
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\obj\Debug\PCKodas.Properties.Resources.resources
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\obj\Debug\PCKodas.csproj.GenerateResource.cache
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\obj\Debug\PCKodas.csproj.CoreCompileInputs.cache
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\obj\Debug\PCKodas.exe
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\obj\Debug\PCKodas.pdb
+C:\Users\simon\Desktop\UNI\6pusmetis\Iterptines\Semestrinis\PCKodas\PCKodas\obj\Debug\PCKodas.Form1.resources
