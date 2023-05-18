@@ -6,7 +6,6 @@
 "semestrinis\main.o"
 "semestrinis\stm32f3xx_it.o"
 "semestrinis\stm32f3xx_hal_msp.o"
-"semestrinis\stm32f3xx_ll_usb.o"
 "semestrinis\stm32f3xx_hal_i2c.o"
 "semestrinis\stm32f3xx_hal_i2c_ex.o"
 "semestrinis\stm32f3xx_hal.o"
@@ -24,8 +23,6 @@
 "semestrinis\stm32f3xx_hal_tim_ex.o"
 "semestrinis\stm32f3xx_hal_uart.o"
 "semestrinis\stm32f3xx_hal_uart_ex.o"
-"semestrinis\stm32f3xx_hal_pcd.o"
-"semestrinis\stm32f3xx_hal_pcd_ex.o"
 "semestrinis\system_stm32f3xx.o"
 --strict --scatter "Semestrinis\Semestrinis.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

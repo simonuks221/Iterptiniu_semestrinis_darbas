@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.Threading;
 using System.IO.Ports;
 using System.Diagnostics;
@@ -106,7 +105,7 @@ namespace PCKodas
             {
                 try
                 {
-                    port = new SerialPort("COM4", 9600, Parity.None, 8, StopBits.One);
+                    port = new SerialPort(selectedPort, 115200, Parity.None, 8, StopBits.One);
                     port.Open();
                     port.DataReceived += new SerialDataReceivedEventHandler(Port_DataReceived);
                     isConnected = true;
@@ -121,30 +120,35 @@ namespace PCKodas
                     return false;
                 }
             }
-            
             return false;
-            
         }
 
         private void Port_DataReceived(object sender, SerialDataReceivedEventArgs e) //Receive USB data
         {
-            
+
             int count = port.BytesToRead;
             byte[] ByteArray = new byte[count];
             port.Read(ByteArray, 0, count);
-            Debug.WriteLine("Got" + ByteArray.Length);
+            //Debug.WriteLine("Got" + ByteArray.Length + ": ");
+            //string ByteArray = port.ReadExisting();
+            Debug.WriteLine("Got" + " length: " + count);
+            foreach (Byte b in ByteArray)
+            {
+                Debug.Write(b);
+            }
+            Debug.Write("\n");
 
             int skaitmuo = 0;
 
-            if (ByteArray.Length > 0) {
+            if (ByteArray.Length >= 3) {
                 for (int i = 0; i < ByteArray.Length; i+= 3)
                 {
                     switch ((int)ByteArray[i])
                     {
-                        case (3):
+                        case (3): //Gavome kampa
                             skaitmuo = ByteArray[i+1] << 8 | ByteArray[i+2];
                             Update_Compass(skaitmuo);
-                            Debug.WriteLine("Got: " + skaitmuo);
+                            //Debug.WriteLine("Got: " + skaitmuo);
 
                             string timeData = DateTime.Now.ToString("h:mm:ss");
                             compassData.Add(new CompassData(skaitmuo, timeData));
@@ -153,7 +157,6 @@ namespace PCKodas
                         case (4): //Gavome kalibracija
                             skaitmuo = ByteArray[i+1] << 8 | ByteArray[i+2];
                             Update_Claibration(skaitmuo);
-                            
                             break;
                     }
                 }
@@ -175,7 +178,7 @@ namespace PCKodas
 
         private void groupBox1_Paint(object sender, PaintEventArgs e)
         {
-            int comppasLineX = -(int)Math.Round(Math.Sin(((float)compass_angle+ (float)180)*Math.PI / (float)180) * 50);
+            int comppasLineX = (int)Math.Round(Math.Sin(((float)compass_angle+ (float)180)*Math.PI / (float)180) * 50);
             int comppasLineY = (int)Math.Round(Math.Cos(((float)compass_angle + (float)180) * Math.PI / (float)180) * 50);
 
             Color black = Color.FromArgb(255, 0, 0, 0);

@@ -446,11 +446,6 @@
           <GroupName>Drivers/STM32F3xx_HAL_Driver</GroupName>
           <Files>
             <File>
-              <FileName>stm32f3xx_ll_usb.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_usb.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f3xx_hal_i2c.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c</FilePath>
@@ -636,16 +631,6 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_pcd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_pcd_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd_ex.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,6 +1,6 @@
 #include "main.h"
 
-#define Enable_screen 0
+#define Enable_screen 1
 #define Enable_sensor 1
 #define Enable_pc 1
 #define Enable_calibration 1
@@ -10,8 +10,8 @@
 #define screen_width 128
 #define screen_height 64
 
-#define lsb_Gauss_xy 450
-#define lsb_Gauss_z 400
+#define lsb_Gauss_xy 1100
+#define lsb_Gauss_z 980
 #define acc_full_scale 2.0f //Akselerometro duomenu pilnas diapozonas +-2g
 
 extern I2C_HandleTypeDef hi2c1;

@@ -11,27 +11,55 @@ uint8_t receiveData[6];
 uint8_t status;
 
 int calibrationValue = 0;
-
 int D = 0;
-
+//Sensoriaus inicializacija
 void I2C_Init(){
-	//Ijungti akselorometra
+	/*
+	sendData[0] = 0x20;
+	sendData[1] = 0x47; //50Hz akselerometro atnaujinimas, ijungimas asiu ir sensoriaus
+	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Accelerometer_Adress, (uint8_t *)sendData, 2, 100);
+	
+	sendData[0] = 0x23;
+	sendData[1] = 0x08; //LSB lower ir High resolution +-2g
+	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Accelerometer_Adress, (uint8_t *)sendData, 2, 100);
+	
+	sendData[0] = 0x23;
+	sendData[1] = 0x90; //Filtrai akselerometro
+	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Accelerometer_Adress, (uint8_t *)sendData, 2, 100);
+	
+	sendData[0] = 0x22;
+	sendData[1] = 0x00; //Filtrai akselerometro
+	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Accelerometer_Adress, (uint8_t *)sendData, 2, 100);
+	
+	//Ijungti magnetini kompasa
+	sendData[0] = 0x00;
+	sendData[1] = 0x14; //Duomenu atnajunimas 30Hz
+	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Compass_Adress, (uint8_t *)sendData, 2, 100);
+	
+	
+	sendData[0] = 0x02;
+	sendData[1] = 0x00; //Pastoviai konvertuoti duomenis
+	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Compass_Adress, (uint8_t *)sendData, 2, 100);
+	
+	sendData[0] = 0x01;
+	sendData[1] = 0x80; //Diapozono nustatymas +-1.3Gauss
+	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Compass_Adress, (uint8_t *)sendData, 2, 100);
+	*/
+	
 	sendData[0] = 0x20;
 	sendData[1] = 0x77; //ODR: 0111, Normal mode 400Hz
 			
-	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Accelerometer_Adress, (uint8_t *)sendData, 2, 100);
-	if(status == HAL_OK){
-		
-	}
+	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Accelerometer_Adress, (uint8_t *)sendData, 2, 1);
 	
 	//Ijungti magnetini kompasa
 	sendData[0] = 0x02;
 	sendData[1] = 0x00; //Continuous conversion
-	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Compass_Adress, (uint8_t *)sendData, 2, 100);
+	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Compass_Adress, (uint8_t *)sendData, 2, 1);
 	
 	sendData[0] = 0x01;
 	sendData[1] = 0x80; //GN: 100, +- 4Gauss
-	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Compass_Adress, (uint8_t *)sendData, 2, 100);
+	status = HAL_I2C_Master_Transmit(&hi2c1, I2C_Compass_Adress, (uint8_t *)sendData, 2, 1);
+	
 }
 
 int nuskaitymu_skaicius = 0;
@@ -93,6 +121,56 @@ float MY2 = 0x0;
 float MZ2 = 0x0;
 
 int Calculate_compass_data(){
+	/*
+	//Randame vidurki
+	rawX = rawX / nuskaitymu_skaicius;
+	rawY = rawY / nuskaitymu_skaicius;
+	rawZ = rawZ / nuskaitymu_skaicius;
+	
+	accX = accX / nuskaitymu_skaicius/100.0f;
+	accY = accY / nuskaitymu_skaicius/100.0f;
+	accZ = accZ / nuskaitymu_skaicius/100.0f;
+	accX = accX/64.0f/100.0f;
+	accY = -accY/64.0f/100.0f;
+	accZ = accZ/64.0f/100.0f;
+	
+	//Pasiverciame magnetine reiksme i gausus nuo 0 iki 1
+	MX1 = rawX / (float)lsb_Gauss_xy; //lsb_Gauss_xy = 1100
+	MY1 = rawY / (float)lsb_Gauss_xy;
+	MZ1 = rawZ / (float)lsb_Gauss_z; //lsb_Gauss_z = 980
+	
+
+	//Skaiciuojame formules
+	pitch = asin(-((float)accX/ 32768.0f/acc_full_scale)); //acc_full_scale = 2
+	roll = asin((float)accY/ 32768.0f/acc_full_scale/cos((float)pitch));
+	
+	MX2 = MX1 * cos(pitch) + MZ1 * sin(pitch);
+	MY2 = MX1 * sin(roll) * sin(pitch) + MY1 * cos(roll) - MY1*sin(roll)*cos(pitch);
+	
+	D = floor( atan2f(MY2, MX2) * 180.0f/3.14f); //Su atkompensavimais
+
+
+	#if Enable_calibration
+		
+	//D += calibrationValue;
+	D %= 360;
+	#endif
+	if(D < 0){
+		D += 360;
+	}
+	
+	//Graziname reiksmes i 0
+	nuskaitymu_skaicius = 0;
+	rawX = 0;
+	rawY = 0;
+	rawZ = 0;
+	accX = 0;
+	accY = 0;
+	accZ = 0;
+	
+	return D;
+	*/
+	
 	//Randame vidurki
 	rawX = rawX / nuskaitymu_skaicius;
 	rawY = rawY / nuskaitymu_skaicius;
@@ -108,12 +186,12 @@ int Calculate_compass_data(){
 	MZ1 = (float)rawZ / lsb_Gauss_z;
 	
 	//Skaiciuojame formules
-	pitch = asin(-((float)accX/ 32768.0f/acc_full_scale)); //Daliname is 2^15 gauti reiksmei nuo 0 iki 1
-	roll = asin((float)accY/ 32768.0f/acc_full_scale/cos((float)pitch)); //32768.0f padariau dalyba vietoj daugybos is 2 ISTESTUOTI TAI
+	pitch = asin(-((float)accX/ 32768.0f*acc_full_scale)); //Daliname is 2^15 gauti reiksmei nuo 0 iki 1
+	roll = asin((float)accY/ 32768.0f*acc_full_scale/cos((float)pitch)); //32768.0f 
 	
 	MX2 = MX1 * cos(pitch) + MZ1 * sin(pitch);
 	MY2 = MX1 * sin(roll) * sin(pitch) + MY1 * cos(roll) - MZ1*sin(roll)*cos(pitch);
-	MZ2 = -MX1*cos(roll)*sin(pitch)+MY1*sin(roll)+MZ1*cos(roll)*cos(pitch);
+	MZ2 = -MX1*cos(roll)*sin(pitch)+MY1*sin(roll)+MY1*cos(roll)*cos(pitch);
 	
 	D = atan2(MY2, MX2) * 180.0f/3.14f; //Su atkompensavimais
 	
@@ -135,6 +213,7 @@ int Calculate_compass_data(){
 	accZ = 0;
 	
 	return D;
+	
 }
 
 void Update_Screen(){
@@ -172,7 +251,7 @@ void Update_PC_Calibration()
 	sendData[0] = 0x04; //Komandos pavadinimas
 	sendData[1] = calibrationValue >> 8;
 	sendData[2] = calibrationValue & 0xFF;
-	if(HAL_UART_Transmit(&huart4, sendData, 3, 1000)  != HAL_OK){
+	if(HAL_UART_Transmit(&huart4, sendData, 3, 1)  != HAL_OK){
 		
 	}
 }
@@ -251,4 +330,3 @@ void Flash_Read_Data (uint32_t StartPageAddress, uint32_t *RxBuf, uint16_t numbe
 		if (!(numberofwords--)) break;
 	}
 }
-

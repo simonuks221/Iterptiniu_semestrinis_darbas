@@ -49,8 +49,6 @@ TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart4;
 
-PCD_HandleTypeDef hpcd_USB_FS;
-
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -62,7 +60,6 @@ static void MX_I2C1_Init(void);
 static void MX_UART4_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_TIM3_Init(void);
-static void MX_USB_PCD_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -72,14 +69,14 @@ static void MX_USB_PCD_Init(void);
 
 int compassRotation = 0;
 int nuskaitymuSkaicius = 0;
-
+//Gauta nuskaitymo taimerio pertrauktis
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
 	HAL_ResumeTick();
 	if(htim == &htim3){
 		Get_Compass_Data();
 		nuskaitymuSkaicius++;
-		if(nuskaitymuSkaicius == 5){
+		if(nuskaitymuSkaicius == 5){ //patikriname ar atnaujinti informacija
 			#if Enable_sensor
 			compassRotation = Calculate_compass_data();
 			#endif
@@ -96,7 +93,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 }
 
 
-//Komandos is kompiuterio
+//Gauta UART RX pertrauktis
 //https://controllerstech.com/flash-programming-in-stm32/
 uint8_t receiveUARTData[6];
 uint16_t received_calibration = 0x0000;
@@ -105,11 +102,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	HAL_ResumeTick();
 	switch(receiveUARTData[0])
 	{
-		case 0x01: //GAvome kalibracija nauja
+		case 0x01: //GAvome nauja kalibracijos verte
 			received_calibration = receiveUARTData[1] | (receiveUARTData[2] << 8);
 			Update_Calibration(received_calibration);
 			Read_Calibration();
-			//HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, GPIO_PIN_SET);
 			break;
 	}
 }
@@ -152,35 +148,28 @@ int main(void)
   MX_UART4_Init();
   MX_I2C2_Init();
   MX_TIM3_Init();
-  MX_USB_PCD_Init();
   /* USER CODE BEGIN 2 */
-	I2C_Init();
+	I2C_Init(); //Sukonfiguruojame sensoriu
 	
 	#if Enable_calibration
-		Read_Calibration();
+		Read_Calibration(); //perskaitome kalibracija irasyta FLASH atmintyje
 	#endif
 
-	#if Enable_screen
+	#if Enable_screen //Ijungiame ekrana
 		SSD1306_Init ();
 		SSD1306_UpdateScreen(); 
 	#endif
-	HAL_TIM_Base_Start_IT(&htim3);
+	HAL_TIM_Base_Start_IT(&htim3); //Pradedame nuskaitymo laikmati
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		
-		
 		HAL_UART_Receive_IT(&huart4, receiveUARTData, 3);
-		
 		HAL_SuspendTick();
     HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON,PWR_SLEEPENTRY_WFI);
 		HAL_ResumeTick();
-		
-	
-		
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -227,12 +216,11 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB|RCC_PERIPHCLK_UART4
-                              |RCC_PERIPHCLK_I2C1|RCC_PERIPHCLK_I2C2;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_UART4|RCC_PERIPHCLK_I2C1
+                              |RCC_PERIPHCLK_I2C2;
   PeriphClkInit.Uart4ClockSelection = RCC_UART4CLKSOURCE_PCLK1;
   PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_HSI;
   PeriphClkInit.I2c2ClockSelection = RCC_I2C2CLKSOURCE_HSI;
-  PeriphClkInit.USBClockSelection = RCC_USBCLKSOURCE_PLL;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
@@ -396,7 +384,7 @@ static void MX_UART4_Init(void)
 
   /* USER CODE END UART4_Init 1 */
   huart4.Instance = UART4;
-  huart4.Init.BaudRate = 9600;
+  huart4.Init.BaudRate = 115200;
   huart4.Init.WordLength = UART_WORDLENGTH_8B;
   huart4.Init.StopBits = UART_STOPBITS_1;
   huart4.Init.Parity = UART_PARITY_NONE;
@@ -412,37 +400,6 @@ static void MX_UART4_Init(void)
   /* USER CODE BEGIN UART4_Init 2 */
 
   /* USER CODE END UART4_Init 2 */
-
-}
-
-/**
-  * @brief USB Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USB_PCD_Init(void)
-{
-
-  /* USER CODE BEGIN USB_Init 0 */
-
-  /* USER CODE END USB_Init 0 */
-
-  /* USER CODE BEGIN USB_Init 1 */
-
-  /* USER CODE END USB_Init 1 */
-  hpcd_USB_FS.Instance = USB;
-  hpcd_USB_FS.Init.dev_endpoints = 8;
-  hpcd_USB_FS.Init.speed = PCD_SPEED_FULL;
-  hpcd_USB_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
-  hpcd_USB_FS.Init.low_power_enable = DISABLE;
-  hpcd_USB_FS.Init.battery_charging_enable = DISABLE;
-  if (HAL_PCD_Init(&hpcd_USB_FS) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USB_Init 2 */
-
-  /* USER CODE END USB_Init 2 */
 
 }
 
@@ -480,6 +437,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : DM_Pin DP_Pin */
+  GPIO_InitStruct.Pin = DM_Pin|DP_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF14_USB;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 }
 
